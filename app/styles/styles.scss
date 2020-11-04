@@ -1,0 +1,152 @@
+$DesaturatedDarkCyan: hsl(180, 29%, 50%);
+$LightGrayishCyanBg: hsl(180, 52%, 96%); //background 
+$LightGrayishCyanFt: hsl(180, 31%, 95%); //filtertablet
+$DarkGrayishCyan: hsl(180, 8%, 52%);
+$VeryDarkGrayishCyan: hsl(180, 14%, 20%);
+
+body {
+    background-color: $LightGrayishCyanBg;
+    margin: 0;
+    font-family: 'Spartan';
+}
+
+#banner {
+    background-color: $DesaturatedDarkCyan;
+    background-image: url("../images/bg-header-desktop.svg");
+    height: 100px;
+}
+
+.jobs-list-container {
+    max-width: 900px;
+    margin: auto; margin-bottom: 30px;
+}
+
+#search {
+    margin-top: -30px; 
+    margin-bottom: 20px; z-index: 2;
+    padding: 10px 25px;
+    background-color: white;
+    display: flex;
+    box-shadow: 0px 3px 8px hsl(180, 29%, 85%);
+    border-radius: 5px;
+
+    input {
+        width: 100%; height: 40px;
+        border: none;
+        font-weight: 700; font-size: 14px;
+
+        &:focus {
+            outline: none;
+            color: $DesaturatedDarkCyan
+        }
+    }
+}
+
+.job-container {
+    background-color: white;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 8px hsl(180, 29%, 85%);
+
+    &.featured {
+        border-left: 4px solid $DesaturatedDarkCyan;
+
+        .job {margin-left: 5px;}
+        
+    }
+}
+
+.job {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+
+    .logo img { 
+        width: 50px; height: 50px;
+        margin-right: 15px;
+    }
+
+    .info {
+
+        p { margin: 5px 0;}
+        
+        .company {
+            display: flex;
+
+            .company-name {font-weight:700; font-size: 10px; color: $DesaturatedDarkCyan;}
+            .tags {
+                display: flex;
+            }
+            .new-job {
+                font-size: 7px; color: white; font-weight: 700;
+                margin-left: 10px; margin-top: 3px;
+                background-color: $DesaturatedDarkCyan; border-radius: 20px;
+                padding: 4.5px 4px 2px 4px;
+            }
+            .featured-job {
+                font-size: 7px; color: white; font-weight: 700;
+                margin-left: 5px; margin-top: 3px;
+                background-color: $VeryDarkGrayishCyan; border-radius: 20px;
+                padding: 4.5px 4px 2px 4px;
+            }
+            
+        }
+        .position{font-weight: 700; font-size: 12px;}
+        .details {
+            display: flex;
+            font-size: 10px; color: $DarkGrayishCyan;
+            
+            p {margin-right: 8px;}
+        }
+    }
+
+    .skills {
+        display: flex;
+        margin-left: auto;
+
+        .skill-container {
+            align-items: center;
+            background-color: $LightGrayishCyanFt;
+            border-radius: 2px;
+            margin-left: 10px;
+            padding: 5px; padding-bottom: 2.5px;
+        }
+
+        p {
+            font-weight:700; font-size: 10px; color: $DesaturatedDarkCyan;
+            margin: 0; padding: 0;
+        }
+    }
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/* Mobile */
+
+@media screen and (max-width: 992px) {
+    .jobs-list-container {
+        width: auto;
+        margin: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .jobs-list-container {
+        margin: auto;
+        max-width: 350px;
+    }
+    .job {
+        flex-wrap: wrap;
+
+        .skills {
+            margin-left: 0;
+            flex-wrap: wrap;
+
+            .skill-container {
+                margin: 10px 10px 0 0;
+            }
+        }
+    }
+}

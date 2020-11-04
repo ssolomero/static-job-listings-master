@@ -1,0 +1,39 @@
+<div class="jobs-list-container">
+  
+  <div id="search">
+    <input placeholder="Search" ng-model="$ctrl.query" />
+  </div>
+  
+  <div class="jobs-list">
+    <div ng-class="jobs.featured? 'job-container featured' : 'job-container'" ng-repeat="jobs in $ctrl.jobs | filter:$ctrl.query">
+      <div class="job">
+        <div class="logo"><img src="{{jobs.logo}}" alt=""></div>
+        <div class="info">
+          <div class="company">
+            <div><p class="company-name">{{jobs.company}}</p></div>
+            <div class="tags">
+              <p ng-if="jobs.new" class="new-job">NEW!</p>
+              <p ng-if="jobs.featured" class="featured-job">FEATURED</p>
+            </div>
+          </div>
+          <div class="position"><p>{{jobs.position}}</p></div>
+          <div class="details">
+            <p>{{jobs.postedAt}}</p>
+            <p>{{jobs.contract}}</p>
+            <p>{{jobs.location}}</p>
+          </div>
+        </div>
+        <div class="skills">
+          <div class="skill-container"><p>{{jobs.role}}</p></div>
+          <div class="skill-container"><p>{{jobs.level}}</p></div>
+          <div class="skill-container" ng-repeat="languages in jobs.languages | filter:$ctrl.query" ><p>{{languages}}</p></div>
+          <div class="skill-container" ng-repeat="tools in jobs.tools | filter:$ctrl.query"><p>{{tools}}</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+  
