@@ -24,7 +24,7 @@
           </div>
         </div>
         <div class="skills">
-          <div class="skill-container"><p>{{jobs.role}}</p></div>
+          <div class="skill-container" ng-click=add><p>{{jobs.role}}</p></div>
           <div class="skill-container"><p>{{jobs.level}}</p></div>
           <div class="skill-container" ng-repeat="languages in jobs.languages | filter:$ctrl.query" ><p>{{languages}}</p></div>
           <div class="skill-container" ng-repeat="tools in jobs.tools | filter:$ctrl.query"><p>{{tools}}</p></div>

@@ -8,18 +8,5 @@ angular.module('jobListing').component('jobListing', {
         $http.get('data.json').then(function(response) {
             self.jobs = response.data;
         });
-
-        // // initial items
-        // self.items = [];
-
-        // // add an item
-        // self.add = function() {
-    	//     self.items.push($scope.input);
-        // };
-
-        // // remove an item
-        // self.remove = function(index) {
-    	//     self.items.splice(index, 1);
-        // };
     }]
 });
